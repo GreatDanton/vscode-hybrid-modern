@@ -1,0 +1,58 @@
+{
+	"name": "theme-hybrid-modern",
+	"displayName": "Hybrid Modern",
+	"description": "Hybrid Modern theme for VS Code.",
+	"version": "0.1.0",
+	"publisher": "greatdanton",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"repository": {
+		"url": "https://github.com/GreatDanton/vscode-hybrid-modern"
+	},
+	"bugs": {
+		"url": "GreatDanton/vscode-hybrid-modern/issues"
+	},
+	"author": {
+		"name": "Jan Pribošek",
+		"email": "pribosek.jan@gmail.com",
+		"url": "jan.pribosek.com"
+	},
+	"license": "MIT",
+	"icon": "",
+	"galleryBanner": {
+		"color": "#5f757f",
+		"theme": "dark"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Hybrid Modern",
+				"path": "./themes/hybrid-modern.tmTheme",
+				"uiTheme": "vs-dark"
+			}
+		]
+	},
+	"scripts": {
+		"build": "node scripts/build.js",
+		"build:watch": "sane 'npm run build' --glob='src/**' --glob='**/build.js'",
+		"changelog": "changelog-maker --filter-release",
+		"postversion": "vsce publish && vsce package",
+		"publish": "np --yolo --no-publish",
+		"version": "node scripts/version.js",
+		"vscode:prepublish": "npm run build"
+	},
+	"devDependencies": {
+		"changelog-maker": "^2.2.5",
+		"execa": "^0.6.0",
+		"pupa": "^1.0.0",
+		"read-pkg": "^2.0.0",
+		"sane": "^1.6.0"
+	},
+	"__metadata": {
+		"publisherDisplayName": "Jan Pribošek"
+	}
+}
